@@ -4,7 +4,7 @@ import { ADD_REACTION } from '../../utils/mutations';
 
 const ReactionForm = ({ thoughtId }) => {
 
-    const [reactionBody, setBody] = useSate('');
+    const [reactionBody, setBody] = useState('');
     const [characterCount, setCharacterCount] = useState(0);
     const [addReaction, { error }] = useMutation(ADD_REACTION);
 
@@ -23,7 +23,7 @@ const ReactionForm = ({ thoughtId }) => {
                 variables: { reactionBody, thoughtId }
             });
         
-            setText('');
+            //setText('');
             setCharacterCount(0);
         } catch (e) {
             console.error(e);
